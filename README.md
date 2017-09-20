@@ -1,5 +1,7 @@
 # SSCS - Submit your  appeal
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/hmcts/submit-your-appeal.svg)](https://greenkeeper.io/)
+
 
 ## Background
 Someone who receives a decision about their entitlement to benefits has the right to appeal against that decision,
