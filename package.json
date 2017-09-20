@@ -16,7 +16,7 @@
     "@hmcts/look-and-feel": "git+https://github.com/hmcts/look-and-feel.git",
     "@hmcts/one-per-page": "git+https://github.com/hmcts/one-per-page.git",
     "express": "^4.15.3",
-    "joi": "^10.6.0",
+    "joi": "^11.0.2",
     "moment": "^2.18.1"
   },
   "devDependencies": {
