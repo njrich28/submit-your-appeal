@@ -6,17 +6,16 @@ const mrnDateOverThirteenMonthsLateErrors = require('steps/compliance/mrn-over-t
 Feature('Page errors');
 
 Before((I) => {
-    I.amOnPage('');
-})
+    I.createASession();
+});
 
 Scenario('I have a MRN but I do not enter the day, month or the year', (I) => {
 
     I.amOnPage('/mrn-date');
     I.click('Continue');
-    I.seeCurrentUrlEquals('/mrn-date');
     I.see(mrnDateErrors.fields.day.error.msg);
-    I.see(mrnDateErrors.fields.day.error.msg);
-    I.see(mrnDateErrors.fields.day.error.msg);
+    I.see(mrnDateErrors.fields.month.error.msg);
+    I.see(mrnDateErrors.fields.year.error.msg);
 
 });
 

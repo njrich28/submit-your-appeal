@@ -6,11 +6,12 @@ const DateUtils = require('utils/DateUtils');
 Feature('It is too late for a user to appeal');
 
 Before((I) => {
-    I.amOnPage('');
-})
+    I.createASession();
+});
 
 Scenario('MRN is older than a month, no reason why Appeal is late, user cannot appeal', (I) => {
 
+    I.amOnPage('/mrn-date');
     I.enterAnMRNDateAndContinue(DateUtils.oneMonthAndOneDayAgo());
     I.seeCurrentUrlEquals('/check-mrn-date');
     I.click('Yes');
@@ -24,6 +25,7 @@ Scenario('MRN is older than a month, no reason why Appeal is late, user cannot a
 
 Scenario('MRN is older than 13 months, no reason why Appeal is late, user cannot appeal', (I) => {
 
+    I.amOnPage('/mrn-date');
     I.enterAnMRNDateAndContinue(DateUtils.thirteenMonthsAndOneDayAgo());
     I.seeCurrentUrlEquals('/check-mrn-date');
     I.click('Yes');
