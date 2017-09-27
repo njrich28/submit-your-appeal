@@ -21,6 +21,13 @@ node {
     stage("Build + Test") {
         def node = tool name: 'Node-8', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
         env.PATH = "${node}/bin:${env.PATH}"
+
+        /* Temporary solution to work round visibility of artifactory in CNP
+         * Removing yarn.lock causes yarn to get deps from public repos. Not ideal
+         * for long term because dependencies will not be stable.
+         */
+        sh 'rm yarn.lock'
+
         sh 'yarn install'
         sh 'yarn test'
 
